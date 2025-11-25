@@ -30,7 +30,17 @@ Username: nagiosadmin
 Password: nagios
 docker stop nagiosdemo
 docker rm nagiosdemo
+sudo apt update
+sudo apt-get install docker.io
+sudo apt install git
+sudo apt install nano
 
+nano dockerfile
+FROM tomcat:9-jdk11
+COPY target/*.war /usr/local/tomcat/webapps
+
+sudo docker build -t mavenweb .
+sudo docker run  -d -p 9090:8080 mavenweb
 
 
 
